@@ -28,17 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtEdit = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.lblResult = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // textBox1
+            // txtEdit
             // 
-            this.textBox1.Location = new System.Drawing.Point(12, 12);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(232, 21);
-            this.textBox1.TabIndex = 0;
+            this.txtEdit.Location = new System.Drawing.Point(12, 12);
+            this.txtEdit.Name = "txtEdit";
+            this.txtEdit.Size = new System.Drawing.Size(232, 21);
+            this.txtEdit.TabIndex = 0;
             // 
             // button1
             // 
@@ -49,6 +49,7 @@
             this.button1.TabIndex = 1;
             this.button1.Text = "입력";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // lblResult
             // 
@@ -68,9 +69,10 @@
             this.ClientSize = new System.Drawing.Size(256, 259);
             this.Controls.Add(this.lblResult);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtEdit);
             this.Name = "Form1";
             this.Text = "문자 입출력";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -78,7 +80,7 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtEdit;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label lblResult;
     }
