@@ -16,10 +16,22 @@ namespace StringIO_TextView
         {
             InitializeComponent();
         }
-
         private void label1_Click(object sender, EventArgs e)
         {
 
+        }
+
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (TextCheck())
+            {
+                this.lblResult.Text = OrgStr + this.txtEdit.Text;
+            }
+            else
+            {
+
+            }
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -27,9 +39,19 @@ namespace StringIO_TextView
             OrgStr = this.lblResult.Text;
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private bool TextCheck()
         {
-            this.lblResult.Text = this.OrgStr + this.txtEdit.Text;
+            if (this.txtEdit.Text != "")
+            {
+                return true;
+            }
+            else
+            {
+                MessageBox.Show("텍스트를 입력하세요!", "알림",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                this.txtEdit.Focus();
+                return false;
+            }
         }
     }
 }
